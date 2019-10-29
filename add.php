@@ -46,20 +46,20 @@ if(array_filter($errors)) {
     
         <?php include('templates/header.php')?>
         
-        <section class="container grey-text">
-            <h4 class="center">Add a Pizza</h4>
-            <form class="white" action="add.php" method="POST">
+        <section>
+            <h4>Add</h4>
+            <form action="add.php" method="POST">
                 <label>Your Email:</label>
                 <input type="text" name="email" value="<?php echo $email ?>">
-                    <div class="red-text"><?php echo $errors['email'];?></div>
+                    <div><?php echo $errors['email'];?></div>
                 <label>Pizza Title:</label>
                 <input type="text" name="title" value="<?php echo $title ?>">
-                    <div class="red-text"><?php echo $errors['title'];?></div>                
+                    <div><?php echo $errors['title'];?></div>                
                 <label>Ingredients (comma separated):</label>
                 <input type="text" name="ingredients" value="<?php echo $ingredients ?>">
-                    <div class="red-text"><?php echo $errors['ingredients'];?></div>              
-                <div class="center">
-                    <input type="submit" name="submit" value="submit" class="btn brand z-depth-0">
+                    <div><?php echo $errors['ingredients'];?></div>              
+                <div>
+                    <input type="submit" name="submit" value="submit">
                 </div>    
             </form>    
         </section>
