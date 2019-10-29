@@ -1,5 +1,5 @@
 <footer>
-    <div>Copyright 2019 Ninja Pizzas</div>
+    <div>Copyright 2019</div>
 </footer>
 </body>
 
