@@ -20,19 +20,19 @@ mysqli_close($conn);
     
         <?php include('templates/header.php')?>
         
-        <h4 class="center grey-text">Pizzas</h4>
+        <h4>Pizzas</h4>
         
         <div>
-            <div class="row">
+            <div>
                 <?php foreach($pizzas as $pizza) ?>
-                <div class="col s6 md3">
-                    <div class="card z-depth-0">
-                        <div class="card-content center">
+                <div>
+                    <div>
+                        <div>
                             <h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
                             <div><?php echo htmlspecialchars($pizza['ingredients']);?></div>
                         </div>
-                        <div class="card-action right-align">
-                            <a class="brand-text" href="#">more info</a>
+                        <div>
+                            <a href="#">more info</a>
                         </div>
                     </div>
                 </div>
