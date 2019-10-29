@@ -22,7 +22,7 @@ mysqli_close($conn);
         
         <h4 class="center grey-text">Pizzas</h4>
         
-        <div class="container">
+        <div>
             <div class="row">
                 <?php foreach($pizzas as $pizza) ?>
                 <div class="col s6 md3">
