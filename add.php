@@ -1,7 +1,7 @@
 <?php
 
-$title = $email = $ingredients = '';
-$errors = array('email' => '', 'title' => '', 'ingredients' => '');
+$title = $email = $interests = '';
+$errors = array('email' => '', 'title' => '', 'interests' => '');
 
 if(isset($_POST['submit'])){
     
@@ -23,12 +23,12 @@ if(isset($_POST['submit'])){
         }
     }
     
-    if(empty($_POST['ingredients'])){
-        $errors['ingredients'] = 'Ingredients are required <br />';
+    if(empty($_POST['interests'])){
+        $errors['interests'] = 'Interests are required <br />';
     } else{
         $ingredients = $_POST['ingredients'];
-        if(!preg_match('/^([a-zA-Z0-9\s]+)(,\s*[a-zA-Z0-9\s]*)*$/', $ingredients)){
-            $errors['ingredients'] = 'Ingredients mus be a comma separated list';
+        if(!preg_match('/^([a-zA-Z0-9\s]+)(,\s*[a-zA-Z0-9\s]*)*$/', $interests)){
+            $errors['interests'] = 'Interests mus be a comma separated list';
         }
     }
 
@@ -55,8 +55,8 @@ if(array_filter($errors)) {
                 <label>Pizza Title:</label>
                 <input type="text" name="title" value="<?php echo $title ?>">
                     <div><?php echo $errors['title'];?></div>                
-                <label>Ingredients (comma separated):</label>
-                <input type="text" name="ingredients" value="<?php echo $ingredients ?>">
+                <label>Interests (comma separated):</label>
+                <input type="text" name="interests" value="<?php echo $interests ?>">
                     <div><?php echo $errors['ingredients'];?></div>              
                 <div>
                     <input type="submit" name="submit" value="submit">
