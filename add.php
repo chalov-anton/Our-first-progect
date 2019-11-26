@@ -52,7 +52,7 @@ if(array_filter($errors)) {
                 <label>Your Email:</label>
                 <input type="text" name="email" value="<?php echo $email ?>">
                     <div><?php echo $errors['email'];?></div>
-                <label>Pizza Title:</label>
+                <label>Title:</label>
                 <input type="text" name="title" value="<?php echo $title ?>">
                     <div><?php echo $errors['title'];?></div>                
                 <label>Interests (comma separated):</label>
