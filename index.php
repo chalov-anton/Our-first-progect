@@ -1,14 +1,14 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'shaun', 'test1234', 'ninjas_pizza');
+$conn = mysqli_connect('localhost', 'root', 'root', 'usersdb');
 
 if(!$conn) {
     echo 'Connection error: ' . mysqli_connect_error();
 }
 
-$sql = 'SELECT title, ingredients, id FROM pizzas';
+$sql = 'SELECT title, interests, id FROM userstable';
 $result = mysqli_query($conn, $sql);
-$pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 mysqli_free_result($result);
 mysqli_close($conn);
@@ -20,16 +20,16 @@ mysqli_close($conn);
     
         <?php include('templates/header.php')?>
         
-        <h4>Pizzas</h4>
+        <h4>Users</h4>
         
         <div>
             <div>
-                <?php foreach($pizzas as $pizza) ?>
+                <?php foreach($users as $user) ?>
                 <div>
                     <div>
                         <div>
-                            <h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
-                            <div><?php echo htmlspecialchars($pizza['ingredients']);?></div>
+                            <h6><?php echo htmlspecialchars($user['title']); ?></h6>
+                            <div><?php echo htmlspecialchars($user['interests']);?></div>
                         </div>
                         <div>
                             <a href="#">more info</a>
