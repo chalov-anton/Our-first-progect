@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
     if(empty($_POST['interests'])){
         $errors['interests'] = 'Interests are required <br />';
     } else{
-        $ingredients = $_POST['ingredients'];
+        $interests = $_POST['interests'];
         if(!preg_match('/^([a-zA-Z0-9\s]+)(,\s*[a-zA-Z0-9\s]*)*$/', $interests)){
             $errors['interests'] = 'Interests mus be a comma separated list';
         }
@@ -57,7 +57,7 @@ if(array_filter($errors)) {
                     <div><?php echo $errors['title'];?></div>                
                 <label>Interests (comma separated):</label>
                 <input type="text" name="interests" value="<?php echo $interests ?>">
-                    <div><?php echo $errors['ingredients'];?></div>              
+                    <div><?php echo $errors['interests'];?></div>              
                 <div>
                     <input type="submit" name="submit" value="submit">
                 </div>    
