@@ -5,9 +5,9 @@
 <body>
     <nav >
         <div>
-            <a href="http://localhost/try/index.php">Test</a>
+            <a href="index.php">Home Page</a>
             <ul>
-                <li><a href="#">Add</a></li>
+                <li><a href="/add.php">Add</a></li>
             </ul>
         </div>
     </nav>
