@@ -32,7 +32,7 @@ mysqli_close($conn);
                             <div><?php echo htmlspecialchars($user['interests']);?></div>
                         </div>
                         <div>
-                            <a href="#">more info</a>
+                            <a href="#">more info test</a>
                         </div>
                     </div>
                 </div>
