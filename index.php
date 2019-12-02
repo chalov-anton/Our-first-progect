@@ -20,7 +20,7 @@ mysqli_close($conn);
 <head>
     <link href="styles.css" type="text/css" rel="stylesheet">
 </head>
->
+
 
 <?php include('templates/header.php') ?>
 
