@@ -1,14 +1,11 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'usersdb');
+include ('config/db_connect');
 
-if (!$conn) {
-    echo 'Connection error: ' . mysqli_connect_error();
-}
-
-$sql = 'SELECT title, interests, id FROM userstable';
+$sql = 'SELECT title, interests, id FROM userstable ORDER BY created_at';
 $result = mysqli_query($conn, $sql);
 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
 
 mysqli_free_result($result);
 mysqli_close($conn);
@@ -36,9 +33,7 @@ mysqli_close($conn);
 
 <div>
     <div>
-        <?php foreach ($users
-
-        as $user) ?>
+        <?php foreach ($users as $user) ?>
         <div>
             <div>
                 <div>

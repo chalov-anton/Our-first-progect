@@ -1,5 +1,7 @@
 <?php
 
+include ('config/db_connect');
+
 $title = $email = $interests = '';
 $errors = array('email' => '', 'title' => '', 'interests' => '');
 
