@@ -47,24 +47,30 @@ if (isset($_POST['submit'])) {
 <link href="styles.css" type="text/css" rel="stylesheet">
 
 <?php include('templates/header.php') ?>
+<main>
+   
 
-<section>
-    <h4>Add</h4>
     <form action="add.php" method="POST">
-        <label>Your Email:</label>
-        <input type="text" name="email" value="<?php echo $email ?>">
+         <h1 class="reg-title">Registration Form</h1>
+         <fieldset>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" placeholder="Enter your email address" value="<?php echo $email ?>">
         <div><?php echo $errors['email']; ?></div>
-        <label>Title:</label>
-        <input type="text" name="title" value="<?php echo $title ?>">
+
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" placeholder="Enter your title" value="<?php echo $title ?>">
         <div><?php echo $errors['title']; ?></div>
-        <label>Interests (comma separated):</label>
-        <input type="text" name="interests" value="<?php echo $interests ?>">
+
+        <label for="interests">Interests (comma separated):</label>
+        <input type="text" name="interests" id="interests" placeholder="What are you interested in?" value="<?php echo $interests ?>">
         <div><?php echo $errors['interests']; ?></div>
+    </fieldset>
         <div>
-            <input type="submit" name="submit" value="submit">
+            <input type="submit" name="submit" value="Send">
         </div>
     </form>
-</section>
+</main>
 <?php include('templates/footer.php') ?>
 
 </html>

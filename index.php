@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', 'root', 'usersdb');
+$conn = mysqli_connect('localhost', 'root', '', 'usersdb');
 
 if (!$conn) {
     echo 'Connection error: ' . mysqli_connect_error();
@@ -23,8 +23,16 @@ mysqli_close($conn);
 
 
 <?php include('templates/header.php') ?>
-
-<h4>Users</h4>
+<main>
+  <h4>Users</h4>
+  <p>djfsjfljsdlfjsdfsd</p>
+  <p>djfsjfljsdlfjsdfsd</p>
+  <p>djfsjfljsdlfjsdfsd</p>
+  <p>djfsjfljsdlfjsdfsd</p>
+  <p>djfsjfljsdlfjsdfsd</p>
+  <p>djfsjfljsdlfjsdfsd</p>
+  <p>djfsjfljsdlfjsdfsd</p>
+</main>
 
 <div>
     <div>
