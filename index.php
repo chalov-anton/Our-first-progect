@@ -22,13 +22,7 @@ mysqli_close($conn);
 <?php include('templates/header.php') ?>
 <main>
   <h4>Users</h4>
-  <p>djfsjfljsdlfjsdfsd</p>
-  <p>djfsjfljsdlfjsdfsd</p>
-  <p>djfsjfljsdlfjsdfsd</p>
-  <p>djfsjfljsdlfjsdfsd</p>
-  <p>djfsjfljsdlfjsdfsd</p>
-  <p>djfsjfljsdlfjsdfsd</p>
-  <p>djfsjfljsdlfjsdfsd</p>
+    <p>djfsjfljsdlfjsdfsd</p>
 </main>
 
 <div>
