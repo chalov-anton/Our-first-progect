@@ -2,7 +2,7 @@
 
 include ('config/db_connect');
 
-$sql = 'SELECT title, interests, id FROM userstable ORDER BY created_at';
+$sql = 'SELECT title, interests, id FROM users ORDER BY created_at';
 $result = mysqli_query($conn, $sql);
 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -24,7 +24,7 @@ mysqli_close($conn);
 
 <div>
     <div>
-        <?php foreach ($users as $user) ?>
+        <?php foreach ($users as $user){ ?>
         <div>
             <div>
                 <div>
@@ -36,6 +36,7 @@ mysqli_close($conn);
                 </div>
             </div>
         </div>
+        <?php } ?>
     </div>
 </div>
 
