@@ -24,7 +24,7 @@ mysqli_close($conn);
 
 <div>
     <div>
-        <?php foreach ($users as $user){ ?>
+        <?php foreach ($users as $user): ?>
         <div>
             <div>
                 <div>
@@ -36,7 +36,7 @@ mysqli_close($conn);
                 </div>
             </div>
         </div>
-        <?php } ?>
+        <?php endforeach; ?>
     </div>
 </div>
 

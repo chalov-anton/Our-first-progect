@@ -37,7 +37,17 @@ if (isset($_POST['submit'])) {
     if (array_filter($errors)) {
 
     } else {
-        header('Location: index.php');
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $interests = mysqli_real_escape_string($conn, $_POST['interests']);
+
+        $sql = "INSERT INTO users(title,email,interests) VALUES('$title', '$email', '$interests') ";
+
+        if(mysqli_query($conn, $sql)){
+            header('Location: index.php');
+        } else {
+            echo 'query error: ' .mysqli_error($conn);
+        }
     }
 }
 
