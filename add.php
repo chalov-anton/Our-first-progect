@@ -56,7 +56,10 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 
-<link href="styles.css" type="text/css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <link href="styles.css" rel="stylesheet">
+<head>
 
 <?php include('templates/header.php') ?>
 <main>

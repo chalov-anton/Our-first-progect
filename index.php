@@ -15,7 +15,8 @@ mysqli_close($conn);
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="styles.css" type="text/css" rel="stylesheet">
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet">
 </head>
 
 

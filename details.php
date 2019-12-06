@@ -17,7 +17,10 @@ if (isset($_GET['id'])) {
 
 <!DOCTYPE html>
 <html>
-
+<head>
+  <meta charset="utf-8">
+  <link href="styles.css" rel="stylesheet">
+<head>
 <?php include('templates/header.php'); ?>
 
     <div>
