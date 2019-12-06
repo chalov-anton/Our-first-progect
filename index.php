@@ -19,7 +19,7 @@ mysqli_close($conn);
 </head>
 
 
-<?php include('templates/header.php') ?>
+<?php include('templates/header.php'); ?>
 
 
 <div>
@@ -32,7 +32,7 @@ mysqli_close($conn);
                     <div><?php echo htmlspecialchars($user['interests']); ?></div>
                 </div>
                 <div>
-                    <a href="#">more info test</a>
+                    <a href="details.php?id=<?php echo $user['id'] ?>">Details</a>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@ mysqli_close($conn);
 </div>
 
 
-<?php include('templates/footer.php') ?>
+<?php include('templates/footer.php'); ?>
 
 </html>
 
