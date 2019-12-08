@@ -57,8 +57,9 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <head>
 
 <?php include('templates/header.php') ?>
@@ -69,20 +70,20 @@ if (isset($_POST['submit'])) {
          <h1 class="reg-title">Registration Form</h1>
          <fieldset>
 
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email" placeholder="Enter your email address" value="<?php echo $email ?>">
-        <div><?php echo $errors['email']; ?></div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Your email address" value="<?php echo $email ?>">
+        <div class="error"><?php echo $errors['email']; ?></div>
 
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" placeholder="Enter your title" value="<?php echo $title ?>">
-        <div><?php echo $errors['title']; ?></div>
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" placeholder="Your title" value="<?php echo $title ?>">
+        <div class="error"><?php echo $errors['title']; ?></div>
 
-        <label for="interests">Interests (comma separated):</label>
+        <label for="interests">Interests</label>
         <input type="text" name="interests" id="interests" placeholder="What are you interested in?" value="<?php echo $interests ?>">
-        <div><?php echo $errors['interests']; ?></div>
+        <div class="error"><?php echo $errors['interests']; ?></div>
     </fieldset>
-        <div>
-            <input type="submit" name="submit" value="Send">
+        <div class="btn-container">
+            <input type="submit" class="button" name="submit" value="Send">
         </div>
     </form>
 </main>
