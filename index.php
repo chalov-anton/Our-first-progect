@@ -15,32 +15,35 @@ mysqli_close($conn);
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 
 <?php include('templates/header.php'); ?>
 
+<main>
 
-<div>
-    <div>
-        <?php foreach ($users as $user): ?>
-        <div>
-            <div>
-                <div>
-                    <h6><?php echo htmlspecialchars($user['title']); ?></h6>
-                    <div><?php echo htmlspecialchars($user['interests']); ?></div>
-                </div>
-                <div>
-                    <a href="details.php?id=<?php echo $user['id'] ?>">Details</a>
-                </div>
+    <?php foreach ($users as $user): ?>
+
+        <div class="wrapper">
+            <h1>Profile info</h1>
+            <div class="user-card">
+                <div class="col col-1">
+                <p>Name:</p>
+                <p>Interests:</p>
+            </div>
+            <div class="col col-2">
+               <p><?php echo htmlspecialchars($user['title']); ?></p>
+               <p><?php echo htmlspecialchars($user['interests']); ?></p>
             </div>
         </div>
-        <?php endforeach; ?>
-    </div>
-</div>
+        <a class="details" href="details.php?id=<?php echo $user['id'] ?>">Details</a>
 
+<?php endforeach; ?>
+
+</main>
 
 <?php include('templates/footer.php'); ?>
 
