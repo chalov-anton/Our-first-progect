@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
                 <!--This form is needed for deleting Cards, don't worry about in because in it hidden -->
                 <form action="details.php" method="POST">
                     <input type="hidden" name="id_to_delete" value="<?php echo $user['id']; ?>">
-                    <input type="submit" name="delete" value="Delete">
+                    <input type="submit" name="delete" value="Delete" onclick="return  confirm('Are you sure you want to Delete this record?')">
                 </form>
             <?php else: ?>
                 <!--this is an error if somehow you'll direct to non existing User card-->
