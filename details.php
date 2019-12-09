@@ -36,6 +36,8 @@ if (isset($_GET['id'])) {
             <h5>There is no user under such ID</h5>
         <?php endif; ?>
 
+        <button onclick="history.go(-1);">Back </button>
+
     </div>
 
 <?php include('templates/footer.php'); ?>
