@@ -30,6 +30,7 @@ mysqli_close($conn);
         <div class="wrapper">
             <h1>Profile info</h1>
             <div class="user-card">
+                <img src="images/zebra.svg" style="width:70px; height:70px;">
                 <div class="col col-1">
                 <p>Name:</p>
                 <p>Interests:</p>
