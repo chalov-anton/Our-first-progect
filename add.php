@@ -61,8 +61,15 @@ if (isset($_POST['submit'])) {
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <head>
+<body>
 
-<?php include('templates/header.php') ?>
+    <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.php">Home Page</a></li>
+      <li><a href="/add.php" class="current">Add</a></li>
+    </ul>
+  </nav>
+
 <main>
    
 
@@ -88,5 +95,5 @@ if (isset($_POST['submit'])) {
     </form>
 </main>
 <?php include('templates/footer.php') ?>
-
+</body>
 </html>
