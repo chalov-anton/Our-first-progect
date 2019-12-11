@@ -49,7 +49,7 @@ footer {
 	/*border: 2px solid red;*/
 	display: flex;
 	justify-content: center;
-	
+
 }
 .soc i {
 	padding: 10px;
@@ -82,10 +82,10 @@ footer {
 /*END of footer style*/
 main {
 	height: 100%;
-
+width: 100vw;
 	
 	margin: 0 auto;
-	/*border: 2px solid yellow;*/
+	border: 2px solid yellow;
 	display: flex;
 	justify-content: center;
 }
@@ -187,6 +187,8 @@ input[type=text] {
 }
 
 .button {
+	font-size: 12px;
+	font-family: 'Montserrat', sans-serif;
 	display: block;
 	width: 90px;
 	padding: 5px 15px; 
@@ -208,44 +210,97 @@ input[type=text] {
 
 /*Style Home page*/
 .wrapper{
-	width: 400px;	
+	max-height: 300px;
 	border: 3px solid blue;
-	height:250px;
+	
+	display: flex;
+	flex-direction: column;
+	
+	width: 300px;
+	font-size: 12px;
+	color: #ffffff;
+	background-color: rgba(44, 31, 106, .5);
+	border-radius: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+	padding-bottom: 20px;
 }
 .wrapper p {
 	margin: 0;
 	margin-bottom: 5px;
+	font-weight: 400;
+	
 }
 .wrapper h1 {
-	font-size:16px;
+	font-size: 16px;
 	text-align: center;
-	margin: 10px 0;
+	padding: 15px 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	margin: 0;
+	    background-color: rgba(38, 29, 83, .5);
 }
 .user-card {
-	border: 1px solid red;
-	padding: 10px;
+	height: 100%;
+	
+	
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-.col {
-	color: #000;
-
+.user-avatar-container {
+	height: 100%;
+	position: relative;
 }
-.col-1 {
+.user-avatar {
+	position: absolute;
+	top: -10px;
+	left: -40px;
 
 	
+	border-radius: 50%;
+	
+}
+.user-avatar:hover {
+	width: 81px;
+	height: 81px;
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,0.5), 0 5px 10px 0 rgba(0,0,0,0.5);
+}
+
+.col-container {
+	width: 100%;
+	border: 2px solid blue;
+	display: flex;
+	
+
+}
+.col {
+	color: #fff;
+font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+}
+.col-1 {
+margin-right: 10px;
+	
 	flex-basis: auto;
-	padding: 0 10px 0 10px;
+	
 	font-weight: 600;
+	padding: 10px 0 10px 10px;
 }
 .col-2 {
 	
 	flex-basis: 100%;
-	padding: 0 10px 0 0;
+	padding: 10px;
 }
 a.details {
+	
 	text-decoration: none;
-	display: block;
-	color: #fff;
-	width: 80px;
-	border: 1px solid red;
-}
+	text-align: center;
+  
+	 
+	 font-family: 'Montserrat', sans-serif;
+	 	font-size: 12px;
+	  width: 90px;
+    padding: 5px 0;
+    margin: 0 auto;
+    margin-top: 20px;
+ }
