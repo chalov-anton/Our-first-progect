@@ -60,9 +60,10 @@ if (isset($_POST['submit'])) {
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
 <body>
-
+<div class="wrap"> 
     <nav class="main-nav">
     <ul class="nav-list">
       <li><a href="index.php">Home Page</a></li>
@@ -95,5 +96,6 @@ if (isset($_POST['submit'])) {
     </form>
 </main>
 <?php include('templates/footer.php') ?>
+</div>
 </body>
 </html>
