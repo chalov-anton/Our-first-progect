@@ -29,18 +29,26 @@ mysqli_close($conn);
     <?php foreach ($users as $user): ?>
 
         <div class="wrapper">
-            <h1>Profile info</h1>
+           <h1>Profile info</h1>
             <div class="user-card">
-                <img src="images/zebra.svg" style="width:70px; height:70px;">
+                <div class="user-avatar-container"> 
+                <img class="user-avatar" src="images/zebra.svg" width="80" height="80">
+            </div>
+                <div class="col-container">
                 <div class="col col-1">
-                <p>Name:</p>
-                <p>Interests:</p>
+                    <p>Name:</p>
+                    <p>Interests:</p>
+                </div>
+                <div class="col col-2">
+                     <p><?php echo htmlspecialchars($user['title']); ?></p>
+                     <p><?php echo htmlspecialchars($user['interests']); ?></p>
+                </div> 
             </div>
-            <div class="col col-2">
-               <p><?php echo htmlspecialchars($user['title']); ?></p>
-               <p><?php echo htmlspecialchars($user['interests']); ?></p>
             </div>
-            <a class="details" href="details.php?id=<?php echo $user['id'] ?>">Details</a>
+
+             <div class="btn-container">
+             <a class="button details" href="details.php?id=<?php echo $user['id'] ?>">Details</a>
+             </div>
         </div>
         
 
