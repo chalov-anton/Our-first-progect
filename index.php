@@ -57,8 +57,9 @@ mysqli_close($conn);
 </main>
 
 <?php include('templates/footer.php'); ?>
+
+   </div>
 </body>
-</div>
 </html>
 
 
