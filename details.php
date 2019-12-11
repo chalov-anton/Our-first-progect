@@ -28,10 +28,14 @@ if (isset($_GET['id'])) {
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="styles.css" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <head>
+        <body>
+            <div class="wrap"> 
         <?php include('templates/header.php'); ?>
-
+<main>
         <div>
             <?php if ($user): ?>
                 <h4><?php echo htmlspecialchars($user['title']); ?></h4>
@@ -52,7 +56,9 @@ if (isset($_GET['id'])) {
 
 
         </div>
-
+</main>
         <?php include('templates/footer.php'); ?>
-
+    
+</div>
+</body>
 </html>
