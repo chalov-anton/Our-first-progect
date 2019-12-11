@@ -1,9 +1,10 @@
-html {
+html, body{
 	height: 100%;
+	box-sizing: border-box;
 }
 
 body {
-	border: 2px solid red;
+	/*border: 2px solid red;*/
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
@@ -16,12 +17,75 @@ body {
 	background: -webkit-linear-gradient(to bottom, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to bottom, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+/*чтоб прижать футер к низу-создается обертка всего в боди*/
+.wrap {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	border: 2px solid green;  /*для теста*/
+	min-width: 940px;
+}
+.main {
+	flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+/*Style for main Footer*/
 
+footer {
+	
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-grow: 0;
+  flex-shrink: 0;
+	flex-basis: auto;
+	/*border: 2px solid blue;  для теста*/
+	align-items: flex-end;
+}
+/*style for soc media*/
+.soc {
+
+	/*border: 2px solid red;*/
+  display: flex;
+  justify-content: center;
+ 
+}
+.soc i {
+  padding: 10px;
+  text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.6);
+  transition: all ease-in-out 150ms;
+}
+.soc a:nth-child(1) {
+  color: #e4405f;
+}
+.soc a:nth-child(2) {
+  color: #3b5998;
+}
+.soc a:nth-child(3) {
+  color: #1DA1F2;
+}
+.soc i:hover {
+  margin-top: -3px;
+  text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+}
+.copyright-info {
+/*border: 2px solid blue;*/
+align-self: flex-end;
+width: 200px;
+color: #000;
+font-size: 12px;
+font-weight: 600;
+text-decoration: none;
+}
+
+/*END of footer style*/
 main {
 	height: 100%;
-	max-width: 940px;
+
+	
 	margin: 0 auto;
-	border: 2px solid blue;
+	/*border: 2px solid yellow;*/
 	display: flex;
 	justify-content: center;
 }
@@ -30,7 +94,7 @@ main {
 .main-nav {
 	margin-top: 50px;
 	margin-bottom: 50px;
-	border: 2px solid red;
+	/*border: 2px solid red;*/
 }
 
 .nav-list {
@@ -84,14 +148,14 @@ h1.reg-title {
 }
 
 form {
-	height: 100%;
+	max-height: 350px;
 	width: 300px;
 	font-size: 12px;
 	color: #ffffff;
 	background-color: rgba(44, 31, 106, .5);
 	border-radius: 15px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-	padding-bottom: 15px;	
+	
 	
 } 
 
@@ -124,7 +188,7 @@ input[type=text] {
 	display: block;
 	width: 90px;
 	padding: 5px 15px; 
-	margin: 15px auto 0 auto;
+	margin: 20px auto 0 auto; /*поправить кнопку расположение*/
 	border: none;
 	border-radius: 10px; 
 	cursor: pointer;
@@ -138,18 +202,13 @@ input[type=text] {
 	box-shadow: 0 5px 16px 0 rgba(0,0,0,0.5), 0 5px 50px 0 rgba(0,0,0,0.5);
 }
 
-/*Style for main Footer*/
-footer {
-color: #000;
-font-size: 12px;
-font-weight: 600;
-margin-top: 25px;
-}
+
 
 /*Style Home page*/
 .wrapper{
 	width: 400px;	
-	border: 1px solid red;
+	border: 3px solid blue;
+	height:250px;
 }
 .wrapper p {
 margin: 0;
@@ -161,7 +220,7 @@ margin-bottom: 5px;
 	margin: 10px 0;
 }
 .user-card {
-	
+	border: 1px solid red;
 	padding: 10px;
 	display: flex;
 }
