@@ -27,8 +27,8 @@ body {
 }
 .main {
 	flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: auto;
+	flex-shrink: 0;
+	flex-basis: auto;
 }
 /*Style for main Footer*/
 
@@ -38,7 +38,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	flex-grow: 0;
-  flex-shrink: 0;
+	flex-shrink: 0;
 	flex-basis: auto;
 	/*border: 2px solid blue;  для теста*/
 	align-items: flex-end;
@@ -47,36 +47,36 @@ footer {
 .soc {
 
 	/*border: 2px solid red;*/
-  display: flex;
-  justify-content: center;
- 
+	display: flex;
+	justify-content: center;
+	
 }
 .soc i {
-  padding: 10px;
-  text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.6);
-  transition: all ease-in-out 150ms;
+	padding: 10px;
+	text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.6);
+	transition: all ease-in-out 150ms;
 }
 .soc a:nth-child(1) {
-  color: #e4405f;
+	color: #e4405f;
 }
 .soc a:nth-child(2) {
-  color: #3b5998;
+	color: #3b5998;
 }
 .soc a:nth-child(3) {
-  color: #1DA1F2;
+	color: #1DA1F2;
 }
 .soc i:hover {
-  margin-top: -3px;
-  text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+	margin-top: -3px;
+	text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
 }
 .copyright-info {
-/*border: 2px solid blue;*/
-align-self: flex-end;
-width: 200px;
-color: #000;
-font-size: 12px;
-font-weight: 600;
-text-decoration: none;
+	/*border: 2px solid blue;*/
+	align-self: flex-end;
+	width: 200px;
+	color: #000;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
 }
 
 /*END of footer style*/
@@ -130,9 +130,9 @@ main {
 }
 
 a.current {
-background: #ad5389;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #ad5389;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /*Style for Registration Form*/
@@ -148,18 +148,20 @@ h1.reg-title {
 }
 
 form {
-	max-height: 350px;
+	display: flex;
+	flex-direction: column;
+	max-height: 330px;
 	width: 300px;
 	font-size: 12px;
 	color: #ffffff;
 	background-color: rgba(44, 31, 106, .5);
 	border-radius: 15px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-	
-	
+	padding-bottom: 20px;
 } 
 
 fieldset {
+	height: 100%;
 	width: auto;
 	border: none;
 	margin: 0 auto;
@@ -211,10 +213,10 @@ input[type=text] {
 	height:250px;
 }
 .wrapper p {
-margin: 0;
-margin-bottom: 5px;
+	margin: 0;
+	margin-bottom: 5px;
 }
-	.wrapper h1 {
+.wrapper h1 {
 	font-size:16px;
 	text-align: center;
 	margin: 10px 0;
@@ -225,7 +227,7 @@ margin-bottom: 5px;
 	display: flex;
 }
 .col {
-color: #000;
+	color: #000;
 
 }
 .col-1 {
