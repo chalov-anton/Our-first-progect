@@ -18,9 +18,10 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <link href="styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
-
+<body>
+   <div class="wrap">  
 <?php include('templates/header.php'); ?>
 
 <main>
@@ -39,15 +40,17 @@ mysqli_close($conn);
                <p><?php echo htmlspecialchars($user['title']); ?></p>
                <p><?php echo htmlspecialchars($user['interests']); ?></p>
             </div>
+            <a class="details" href="details.php?id=<?php echo $user['id'] ?>">Details</a>
         </div>
-        <a class="details" href="details.php?id=<?php echo $user['id'] ?>">Details</a>
+        
 
 <?php endforeach; ?>
 
 </main>
 
 <?php include('templates/footer.php'); ?>
-
+</body>
+</div>
 </html>
 
 
