@@ -28,29 +28,29 @@ mysqli_close($conn);
 
     <?php foreach ($users as $user): ?>
 
-        <div class="wrapper">
-           <h1>Profile info</h1>
-            <div class="user-card">
-                <div class="user-avatar-container"> 
-                <img class="user-avatar" src="images/zebra.svg" width="80" height="80">
-            </div>
-                <div class="col-container">
-                <div class="col col-1">
-                    <p>Name:</p>
-                    <p>Interests:</p>
-                </div>
-                <div class="col col-2">
-                     <p><?php echo htmlspecialchars($user['title']); ?></p>
-                     <p><?php echo htmlspecialchars($user['interests']); ?></p>
-                </div> 
-            </div>
-            </div>
-
-             <div class="btn-container">
-             <a class="button details" href="details.php?id=<?php echo $user['id'] ?>">Details</a>
+<div class="card-container">
+    
+    <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+    <h3>Ricky Park</h3>
+    <h6>New York</h6>
+    <p><?php echo htmlspecialchars($user['title']); ?></p>
+    <p><?php echo htmlspecialchars($user['interests']); ?></p>
+    <div class="buttons">
+             <a class="primary" href="details.php?id=<?php echo $user['id'] ?>">Details</a>
              </div>
-        </div>
-        
+    <div class="skills">
+        <h6>Skills</h6>
+        <ul>
+            <li>UI / UX</li>
+            <li>Front End Development</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node</li>
+        </ul>
+    </div>
+</div>
 
 <?php endforeach; ?>
 

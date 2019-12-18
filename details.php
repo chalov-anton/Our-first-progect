@@ -36,19 +36,25 @@ if (isset($_GET['id'])) {
             <div class="wrap"> 
         <?php include('templates/header.php'); ?>
 <main>
-        <div>
+        <div class="card-container card-details">
+            <fieldset>
             <?php if ($user): ?>
                 <h4><?php echo htmlspecialchars($user['title']); ?></h4>
                 <p>Created by: <?php echo htmlspecialchars($user['email']); ?></p>
                 <p><?php echo date($user['created_at']); ?></p>
                 <h5>Interests:</h5>
                 <p><?php echo htmlspecialchars($user['interests']); ?></p>
-                <button onclick="history.go(-1);">Back</button>
+            </fieldset>
+                <div class="buttons btn-details">
+                <button class="primary btn-back" onclick="history.go(-1);">Back</button>
                 <!--This form is needed for deleting Cards, don't worry about in because in it hidden -->
                 <form action="details.php" method="POST">
-                    <input type="hidden" name="id_to_delete" value="<?php echo $user['id']; ?>">
-                    <input type="submit" name="delete" value="Delete" onclick="return  confirm('Are you sure you want to Delete this record?')">
+                     
+                    <input  type="hidden" name="id_to_delete" value="<?php echo $user['id']; ?>">
+                    <input type="submit" class="primary btn-del" name="delete" value="Delete" onclick="return  confirm('Are you sure you want to Delete this record?')">
+               
                 </form>
+                </div>
             <?php else: ?>
                 <!--this is an error if somehow you'll direct to non existing User card-->
                 <h5>There is no user under such ID</h5>

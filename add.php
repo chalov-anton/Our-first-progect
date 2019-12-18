@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
-<body>
+<body class="for-add">
 <div class="wrap"> 
     <nav class="main-nav">
     <ul class="nav-list">
@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
 <main>
    
 
-    <form action="add.php" method="POST">
+    <form class="add-form" action="add.php" method="POST">
          <h1 class="reg-title">Registration Form</h1>
          <fieldset>
 
