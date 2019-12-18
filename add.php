@@ -76,7 +76,10 @@ if (isset($_POST['submit'])) {
 
     <form class="add-form" action="add.php" method="POST">
          <h1 class="reg-title">Registration Form</h1>
-         <fieldset>
+<fieldset>
+        <label for="Name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Your name">
+        <div class="error"></div>
 
         <label for="email">Email</label>
         <input type="text" name="email" id="email" placeholder="Your email address" value="<?php echo $email ?>">
@@ -86,10 +89,14 @@ if (isset($_POST['submit'])) {
         <input type="text" name="title" id="title" placeholder="Your title" value="<?php echo $title ?>">
         <div class="error"><?php echo $errors['title']; ?></div>
 
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" placeholder="Yout city">
+        <div class="error"></div>
+
         <label for="interests">Interests</label>
         <input type="text" name="interests" id="interests" placeholder="What are you interested in?" value="<?php echo $interests ?>">
         <div class="error"><?php echo $errors['interests']; ?></div>
-    </fieldset>
+</fieldset>
         <div class="btn-container">
             <input type="submit" class="button" name="submit" value="Send">
         </div>

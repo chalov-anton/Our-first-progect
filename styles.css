@@ -27,7 +27,7 @@ body.for-add {
 	flex-direction: column;
 	height: 100%;
 	min-height: 100vh;
-	border: 2px solid green;  /*для теста*/
+	/*border: 2px solid green; */ /*для теста*/
 }
 
 /*Style for main Footer*/
@@ -85,7 +85,7 @@ main {
 	width: 100vw;
 	flex-wrap: wrap;
 	margin: 0 auto;
-	border: 2px solid yellow;
+	/*border: 2px solid yellow;*/
 	display: flex;
 	justify-content: center;
 }
@@ -151,9 +151,9 @@ h1.reg-title {
 form.add-form {
 	display: flex;
 	flex-direction: column;
-	max-height: 330px;
+	max-height: 460px;
 	min-height: 330px;
-	width: 300px;
+	width: 350px;
 	font-size: 12px;
 	color: #ffffff;
 	background-color: #231E39;
@@ -221,27 +221,7 @@ p {
 	font-size: 14px;
 	line-height: 21px;
 }
-/*form.add-form {
-	display: flex;
-	flex-direction: column;
-	max-height: 330px;
-	min-height: 330px;
-	width: 300px;
-	font-size: 12px;
-	color: #ffffff;
-	background-color: #231E39;
-	border-radius: 15px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-	padding-bottom: 20px;
-} 
 
-fieldset {
-	height: 100%;
-	width: auto;
-	border: none;
-	margin: 0 auto;
-	padding: 10px 30px 0 30px;
-}	*/
 .card-container {
 
 	background-color: #231E39;
