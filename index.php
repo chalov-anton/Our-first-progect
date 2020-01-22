@@ -5,7 +5,7 @@ include ('config/db_connect');
 $sql = 'SELECT title, interests, id FROM users ORDER BY created_at';
 $result = mysqli_query($conn, $sql);
 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+$row_num = mysqli_num_rows($result);
 
 mysqli_free_result($result);
 mysqli_close($conn);
@@ -22,8 +22,11 @@ mysqli_close($conn);
 </head>
 <body>
    <div class="wrap">  
-<?php include('templates/header.php'); ?>
+<?php include('templates/header.php'); 
 
+if ($row_num == 0) {
+    echo 'No records found'; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 Alexandra, please style this error */
+}?>
 <main>
 
     <?php foreach ($users as $user): ?>

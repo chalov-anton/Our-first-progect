@@ -22,6 +22,7 @@ if (isset($_GET['id'])) {
     mysqli_close($conn);
 }
 
+$s='#';
 ?>
 
 <!DOCTYPE html>
@@ -31,20 +32,23 @@ if (isset($_GET['id'])) {
      <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <head>
+</head>
         <body>
             <div class="wrap"> 
         <?php include('templates/header.php'); ?>
 <main>
         <div class="card-container card-details">
-            <fieldset>
+            
             <?php if ($user): ?>
                 <h4><?php echo htmlspecialchars($user['title']); ?></h4>
                 <p>Created by: <?php echo htmlspecialchars($user['email']); ?></p>
-                <p><?php echo date($user['created_at']); ?></p>
+                <p><?php echo htmlspecialchars($user['city']); ?></p>
+                                
                 <h5>Interests:</h5>
-                <p><?php echo htmlspecialchars($user['interests']); ?></p>
-            </fieldset>
+                <p><?php echo htmlspecialchars($user['interests']) ?></p>
+                
+                <p><?php echo date($user['created_at']); ?></p>
+            
                 <div class="buttons btn-details">
                 <button class="primary btn-back" onclick="history.go(-1);">Back</button>
                 <!--This form is needed for deleting Cards, don't worry about in because in it hidden -->

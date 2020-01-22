@@ -2,8 +2,8 @@
 
 include ('config/db_connect');
 
-$title = $email = $interests = '';
-$errors = array('email' => '', 'title' => '', 'interests' => '');
+$title = $email = $city = $interests = '';
+$errors = array('email' => '', 'title' => '', 'city' => '', 'interests' => '');
 
 if (isset($_POST['submit'])) {
 
@@ -17,20 +17,29 @@ if (isset($_POST['submit'])) {
     }
 
     if (empty($_POST['title'])) {
-        $errors['title'] = 'A Title is required <br />';
+        $errors['title'] = 'Job title is required <br />';
     } else {
         $title = $_POST['title'];
         if (!preg_match('/^[a-zA-Z\s]+$/', $title)) {
-            $errors['title'] = 'Title must be letters and spaces only';
+            $errors['title'] = 'Job title must be letters and spaces only';
         }
     }
-
+    
+    if (empty($_POST['city'])) {
+        $errors['city'] = 'City is required <br />';
+    } else {
+        $city = $_POST['city'];
+        if (!preg_match('/^[a-zA-Z\s-]+$/', $city)) { 
+            $errors['city'] = 'City must be letters spaces and/or dashes only';
+        }
+    }
+    
     if (empty($_POST['interests'])) {
         $errors['interests'] = 'Interests are required <br />';
     } else {
         $interests = $_POST['interests'];
         if (!preg_match('/^([a-zA-Z0-9\s]+)(,\s*[a-zA-Z0-9\s]*)*$/', $interests)) {
-            $errors['interests'] = 'Interests mus be a comma separated list';
+            $errors['interests'] = 'Interests must be a comma separated list';
         }
     }
 
@@ -39,9 +48,10 @@ if (isset($_POST['submit'])) {
     } else {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $city = mysqli_real_escape_string($conn, $_POST['city']);
         $interests = mysqli_real_escape_string($conn, $_POST['interests']);
 
-        $sql = "INSERT INTO users(title,email,interests) VALUES('$title', '$email', '$interests') ";
+        $sql = "INSERT INTO users(title,email,city,interests) VALUES('$title', '$email', '$city', '$interests') ";
 
         if(mysqli_query($conn, $sql)){
             header('Location: index.php');
@@ -61,7 +71,7 @@ if (isset($_POST['submit'])) {
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<head>
+</head>
 <body class="for-add">
 <div class="wrap"> 
     <nav class="main-nav">
@@ -74,7 +84,7 @@ if (isset($_POST['submit'])) {
 <main>
    
 
-    <form class="add-form" action="add.php" method="POST">
+    <form class="add-form" action="add.php" method="POST" enctype="multipart/form-data">
          <h1 class="reg-title">Registration Form</h1>
 <fieldset>
         <label for="Name">Name</label>
@@ -84,18 +94,22 @@ if (isset($_POST['submit'])) {
         <label for="email">Email</label>
         <input type="text" name="email" id="email" placeholder="Your email address" value="<?php echo $email ?>">
         <div class="error"><?php echo $errors['email']; ?></div>
-
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" placeholder="Your title" value="<?php echo $title ?>">
+        <label for="title">Job title</label>
+        <input type="text" name="title" id="title" placeholder="Your job title" value="<?php echo $title ?>">
         <div class="error"><?php echo $errors['title']; ?></div>
 
         <label for="city">City</label>
-        <input type="text" name="city" id="city" placeholder="Yout city">
-        <div class="error"></div>
+        <input type="text" name="city" id="city" placeholder="Your city">
+        <div class="error"><?php echo $errors['city']; ?></div>
 
         <label for="interests">Interests</label>
         <input type="text" name="interests" id="interests" placeholder="What are you interested in?" value="<?php echo $interests ?>">
         <div class="error"><?php echo $errors['interests']; ?></div>
+        
+        <!-- !!!!!!!!!!!! Alexandra, don't worry about this input, it's in progresses*/ =-->
+        <input type="image" name="image" id="image">
+        
+        
 </fieldset>
         <div class="btn-container">
             <input type="submit" class="button" name="submit" value="Send">
