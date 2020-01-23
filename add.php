@@ -2,8 +2,8 @@
 
 include ('config/db_connect');
 
-$title = $email = $city = $interests = '';
-$errors = array('email' => '', 'title' => '', 'city' => '', 'interests' => '');
+$title = $name = $email = $city = $interests = '';
+$errors = array('email' => '', 'name' => '', 'title' => '', 'city' => '', 'interests' => '');
 
 if (isset($_POST['submit'])) {
 
@@ -22,6 +22,15 @@ if (isset($_POST['submit'])) {
         $title = $_POST['title'];
         if (!preg_match('/^[a-zA-Z\s]+$/', $title)) {
             $errors['title'] = 'Job title must be letters and spaces only';
+        }
+    }
+    /*to finish properly*/
+    if (empty($_POST['name'])) {
+        $errors['name'] = 'Name is required <br />';
+    } else {
+        $name = $_POST['name'];
+        if (!preg_match('/^[a-zA-Z\s]+$/', $name)) {
+            $errors['name'] = 'Name must be letters and spaces only';
         }
     }
     
@@ -47,11 +56,12 @@ if (isset($_POST['submit'])) {
 
     } else {
         $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $city = mysqli_real_escape_string($conn, $_POST['city']);
         $interests = mysqli_real_escape_string($conn, $_POST['interests']);
 
-        $sql = "INSERT INTO users(title,email,city,interests) VALUES('$title', '$email', '$city', '$interests') ";
+        $sql = "INSERT INTO users(title,name,email,city,interests) VALUES('$title', '$name', '$email', '$city', '$interests') ";
 
         if(mysqli_query($conn, $sql)){
             header('Location: index.php');
@@ -88,7 +98,8 @@ if (isset($_POST['submit'])) {
          <h1 class="reg-title">Registration Form</h1>
 <fieldset>
         <label for="Name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Your name">
+        <input type="text" name="name" id="name" placeholder="Your name" value="<?php echo $name ?>">
+        <div class="error"><?php echo $errors['name']; ?></div>
         <div class="error"></div>
 
         <label for="email">Email</label>

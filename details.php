@@ -40,6 +40,8 @@ $s='#';
         <div class="card-container card-details">
             
             <?php if ($user): ?>
+            <!-- Please move the name field where you like and style it -->    
+            <h4><?php echo htmlspecialchars($user['name']); ?></h4>
                 <h4><?php echo htmlspecialchars($user['title']); ?></h4>
                 <p>Created by: <?php echo htmlspecialchars($user['email']); ?></p>
                 <p><?php echo htmlspecialchars($user['city']); ?></p>
