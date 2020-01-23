@@ -25,7 +25,16 @@ mysqli_close($conn);
 <?php include('templates/header.php'); 
 
 if ($row_num == 0) {
-    echo 'No records found'; /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 Alexandra, please style this error */
+    echo 
+    "<span style='width:350px;
+    color:white;
+    margin:0 auto;
+    font-size: 18px;
+    padding: 10px 0;
+    text-align:center; 
+    background-color: #1F1A36;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)';
+    >No records found</span>"; 
 }?>
 <main>
 
