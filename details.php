@@ -47,7 +47,7 @@ $s='#';
                 <p><?php echo htmlspecialchars($user['city']); ?></p>
                                 
                 <h5>Interests:</h5>
-                <p><?php echo htmlspecialchars($user['interests']) ?></p>
+                <p><?php echo htmlspecialchars($user['interests']); ?></p>
                 
                 <p><?php echo date($user['created_at']); ?></p>
             

@@ -21,8 +21,16 @@ mysqli_close($conn);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-   <div class="wrap">  
-<?php include('templates/header.php'); 
+   
+<?php include('templates/header.php');?> 
+ <!-- Search field -->
+<form action="search.php" method="POST">
+    <input type="text" name="search" placeholder="search">
+    <button type="submit" name="submit-search">Search</button>
+</form>
+    
+    <div class="wrap">  
+<?php  
 
 if ($row_num == 0) {
     echo 
