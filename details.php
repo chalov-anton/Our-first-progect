@@ -28,20 +28,26 @@ $s='#';
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-     <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-        <body>
-            <div class="wrap"> 
-        <?php include('templates/header.php'); ?>
-<main>
-        <div class="card-container card-details">
+<body>
+    <div class="wrap"> 
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.php" class="current">Home Page</a></li>
+                <li><a href="../add.php">Add</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="card-container card-details">
             
-            <?php if ($user): ?>
-            <!-- Please move the name field where you like and style it -->    
-            <h4><?php echo htmlspecialchars($user['name']); ?></h4>
+             <?php if ($user): ?>
+             <!-- Please move the name field where you like and style it -->    
+                <h4><?php echo htmlspecialchars($user['name']); ?></h4>
                 <h4><?php echo htmlspecialchars($user['title']); ?></h4>
                 <p>Created by: <?php echo htmlspecialchars($user['email']); ?></p>
                 <p><?php echo htmlspecialchars($user['city']); ?></p>
@@ -54,23 +60,26 @@ $s='#';
                 <div class="buttons btn-details">
                 <button class="primary btn-back" onclick="history.go(-1);">Back</button>
                 <!--This form is needed for deleting Cards, don't worry about in because in it hidden -->
+                
                 <form action="details.php" method="POST">
-                     
                     <input  type="hidden" name="id_to_delete" value="<?php echo $user['id']; ?>">
                     <input type="submit" class="primary btn-del" name="delete" value="Delete" onclick="return  confirm('Are you sure you want to Delete this record?')">
-               
                 </form>
-                </div>
+            </div>
             <?php else: ?>
                 <!--this is an error if somehow you'll direct to non existing User card-->
                 <h5>There is no user under such ID</h5>
             <?php endif; ?>
+        </main>
 
-
-        </div>
-</main>
-        <?php include('templates/footer.php'); ?>
-    
-</div>
+        <footer>
+            <div class="soc">
+                <a target="_blank" href="https://www.instagram.com/chalov_anton/"><i class="fa fa-2x fa-instagram"></i></a>
+                <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-2x fa-facebook-square"></i></a>
+                <a target="_blank" href="https://github.com/chalov-anton/Our-first-project"><i class="fa fa-2x fa-github"></i></a>
+            </div>
+            <div class="copyright-info">Copyright <?php echo date("Y"); ?></div>
+        </footer>
+    </div><!--End of wrap-->
 </body>
 </html>

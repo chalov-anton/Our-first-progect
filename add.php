@@ -77,57 +77,62 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body class="for-add">
-<div class="wrap"> 
-    <nav class="main-nav">
-    <ul class="nav-list">
-      <li><a href="index.php">Home Page</a></li>
-      <li><a href="/add.php" class="current">Add</a></li>
-    </ul>
-  </nav>
+    <div class="wrap"> 
+        <nav class="main-nav">
+            <ul class="nav-list">
+              <li><a href="index.php">Home Page</a></li>
+              <li><a href="/add.php" class="current">Add</a></li>
+            </ul>
+        </nav>
 
-<main>
-   
+        <main>
+            <form class="add-form" action="add.php" method="POST" enctype="multipart/form-data">
+               <h1 class="reg-title">Registration Form</h1>
+               <fieldset>
+                    <label for="Name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Your name" value="<?php echo $name ?>">
+                    <div class="error"><?php echo $errors['name']; ?></div>
+                    <div class="error"></div>
 
-    <form class="add-form" action="add.php" method="POST" enctype="multipart/form-data">
-         <h1 class="reg-title">Registration Form</h1>
-<fieldset>
-        <label for="Name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Your name" value="<?php echo $name ?>">
-        <div class="error"><?php echo $errors['name']; ?></div>
-        <div class="error"></div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Your email address" value="<?php echo $email ?>">
+                    <div class="error"><?php echo $errors['email']; ?></div>
+                    <label for="title">Job title</label>
+                    <input type="text" name="title" id="title" placeholder="Your job title" value="<?php echo $title ?>">
+                    <div class="error"><?php echo $errors['title']; ?></div>
 
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="Your email address" value="<?php echo $email ?>">
-        <div class="error"><?php echo $errors['email']; ?></div>
-        <label for="title">Job title</label>
-        <input type="text" name="title" id="title" placeholder="Your job title" value="<?php echo $title ?>">
-        <div class="error"><?php echo $errors['title']; ?></div>
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" placeholder="Your city">
+                    <div class="error"><?php echo $errors['city']; ?></div>
 
-        <label for="city">City</label>
-        <input type="text" name="city" id="city" placeholder="Your city">
-        <div class="error"><?php echo $errors['city']; ?></div>
+                    <label for="interests">Interests</label>
+                    <input type="text" name="interests" id="interests" placeholder="What are you interested in?" value="<?php echo $interests ?>">
+                    <div class="error"><?php echo $errors['interests']; ?></div>
 
-        <label for="interests">Interests</label>
-        <input type="text" name="interests" id="interests" placeholder="What are you interested in?" value="<?php echo $interests ?>">
-        <div class="error"><?php echo $errors['interests']; ?></div>
-        
-        <!-- !!!!!!!!!!!! Alexandra, don't worry about this input, it's in progresses*/ =-->
-        <input type="image" name="image" id="image">
-        
-        
-</fieldset>
-        <div class="btn-container">
-            <input type="submit" class="button" name="submit" value="Send">
-        </div>
-    </form>
-</main>
-<?php include('templates/footer.php') ?>
-</div>
+                 <!-- !!!!!!!!!!!! Alexandra, don't worry about this input, it's in progresses*/ -->
+                    <!--<input type="image" name="image" id="image">-->
+                </fieldset>
+                <div class="btn-container">
+                    <input type="submit" class="button" name="submit" value="Send">
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <div class="soc">
+                <a target="_blank" href="https://www.instagram.com/chalov_anton/"><i class="fa fa-2x fa-instagram"></i></a>
+                <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-2x fa-facebook-square"></i></a>
+                <a target="_blank" href="https://github.com/chalov-anton/Our-first-project"><i class="fa fa-2x fa-github"></i></a>
+            </div>
+            <div class="copyright-info">Copyright <?php echo date("Y"); ?></div>
+        </footer>
+    </div> <!--End of wrap-->
 </body>
 </html>
